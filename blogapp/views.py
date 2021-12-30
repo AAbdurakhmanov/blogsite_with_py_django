@@ -21,6 +21,8 @@ def post_detail(request, slug):
         form = CommentForm()
 
 
-    context = {'post': post, 'form': form}
+    context = {'post': post,
+               'form': form}
+
     return render(request, 'blogapp/post_detail.html', context)
 
