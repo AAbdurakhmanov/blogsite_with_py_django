@@ -5,6 +5,29 @@
 	<p><strong>{{ post.intro }}</strong></p>
 	<p>{{ post.body }}</p>
 	<hr>
+	<h2 class="subtitle">Comments</h2>
+
+	{% for comment in post.comment.all %}
+		<article class="media">
+			<div class="media-content">
+				<div class="content">
+					<p>
+						<strong> {{ comment.name }} </strong><smal>{{ comment.date_added }}</smal>
+						<br>
+						{{ comment.body }}
+					</p>
+				</div>
+			</div>
+		</article>
+	{% empty %}
+	<div class="notification">
+		<p>No comments yet </p>
+		<h4>{{ comment.body }}</h4>
+	</div>
+	<hr>
+	{% endfor %}
+
+
 	<h2 class="subtitle">Add comment</h2>
 	<form method="post" action=".">
 		{% csrf_token %}
