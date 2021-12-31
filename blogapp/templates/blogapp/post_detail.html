@@ -1,14 +1,13 @@
 {% extends 'blogapp/base.html' %}
 {% block content %}
 	<div class="container">
-		<a href="{% url 'home' %}"><button type="button" class="btn btn-primary">back</button></a>
 		<h1 class="title">{{ post.title }}</h1>
 		<small>Posted at {{ post.date_added }}</small>
 		<p><strong>{{ post.intro }}</strong></p>
 		<p>{{ post.body }}</p>
+		<a href="{% url 'home' %}"><button type="button" class="btn btn-primary">back</button></a>
 		<hr>
 		<h2 class="subtitle">Comments</h2>
-
 		{% for comment in post.comment.all %}
 			<article class="media">
 				<div class="media-content">

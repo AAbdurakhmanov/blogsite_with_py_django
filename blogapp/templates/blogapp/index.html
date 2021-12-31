@@ -7,7 +7,11 @@
 				<h2 class="">{{ post.title }}</h2>
 				<p>{{ post.intro }}</p>
 				<small>Posted at {{ post.date_added }}</small>
-				<a href="{% url 'post_detail' post.slug %}"><button class="btn btn btn-primary" type="button">Read more</button></a>
+				<p>
+					<a href="{% url 'post_detail' post.slug %}">
+					<button class="btn btn btn-primary" type="button">Read more</button>
+					</a>
+				</p>
 			</div>
 		</div>
 	{% endfor %}
