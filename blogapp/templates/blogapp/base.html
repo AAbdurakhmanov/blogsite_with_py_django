@@ -30,9 +30,9 @@
           </a>
           <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             {% if request.user.is_authenticated %}
-            <h4>{{ request.user|title }}</h4>
+            <h4><u> {{ request.user|title }} </u></h4>
             {% else %}
-            <h3>Who am I</h3>
+            <h3><u>Who am I</u></h3>
             {% endif %}
             <li><a href="{% url 'home' %}" class="nav-link px-2 text-white">Home</a></li>
             <li><a href="{% url 'add_post' %}" class="nav-link px-2 text-white">Add post</a></li>

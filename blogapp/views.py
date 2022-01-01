@@ -39,4 +39,5 @@ class UserRegisterView(generic.CreateView):
 class AddPostView(CreateView):
     model = Post
     template_name = 'blogapp/add_post.html'
+    success_url = reverse_lazy('home')
     fields = '__all__'
