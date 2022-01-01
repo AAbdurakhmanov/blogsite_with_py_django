@@ -36,7 +36,7 @@ class UserRegisterView(generic.CreateView):
     success_url = reverse_lazy('login')
 
 
-class AddPostView(DetailView):
+class AddPostView(CreateView):
     model = Post
     template_name = 'blogapp/add_post.html'
     fields = '__all__'
