@@ -15,9 +15,8 @@ def index(request):
 
 def post_detail(request, slug):
     post = Post.objects.get(slug=slug)
-
+    form = CommentForm(request.POST)
     if request.method == 'POST':
-        form = CommentForm(request.POST)
 
         if form.is_valid():
             comment = form.save(commit=False)
