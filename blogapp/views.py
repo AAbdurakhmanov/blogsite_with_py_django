@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views import generic
+from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from .models import Post
@@ -34,3 +35,8 @@ class UserRegisterView(generic.CreateView):
     template_name = 'registration/register.html'
     success_url = reverse_lazy('login')
 
+
+class AddPostView(DetailView):
+    model = Post
+    template_name = 'blogapp/add_post.html'
+    fields = '__all__'
