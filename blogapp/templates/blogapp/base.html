@@ -35,7 +35,10 @@
             <h3><u>Who am I</u></h3>
             {% endif %}
             <li><a href="{% url 'home' %}" class="nav-link px-2 text-white">Home</a></li>
+            {% if request.user.is_authenticated %}
             <li><a href="{% url 'add_post' %}" class="nav-link px-2 text-white">Add post</a></li>
+            {% else %}
+            {% endif %}
             <li><a href="#" class="nav-link px-2 text-white">About</a></li>
           </ul>
           <div class="text-end">
