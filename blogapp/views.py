@@ -10,8 +10,7 @@ from .forms import CommentForm
 
 def index(request):
     posts = Post.objects.all()
-    context = {'posts': posts}
-    return render(request, 'blogapp/index.html', context)
+    return render(request, 'blogapp/index.html', {'posts': posts})
 
 def post_detail(request, slug):
     post = Post.objects.get(slug=slug)
